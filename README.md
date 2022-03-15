@@ -1,5 +1,8 @@
 # Contact Matrix Generator
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/d5fa8dbe499a15d7ca20/maintainability)](https://codeclimate.com/github/mvaradi/contact-matrix-generator/maintainability)
+[![codecov](https://codecov.io/gh/mvaradi/contact-matrix-generator/branch/master/graph/badge.svg?token=RED53O4MCB)](https://codecov.io/gh/mvaradi/contact-matrix-generator)
+
 This Python 3.9 package can generate C-alpha contact matrices by parsing an
 input mmCIF file, and writing out matrices per PDB chains in .npy format.
 
@@ -35,13 +38,13 @@ The package relies on the following:
 The tool can be used as a CLI:
 
 ```shell
-python .\main.py -i ./input.cif -o /path/to/output/files
+python ./main.py -i ./input.cif -o /path/to/output/files
 ```
 
 OR
 
 ```shell
-python .\main.py --input_path=./input.cif --output_path=/path/to/output/files
+python ./main.py --input_path=./input.cif --output_path=/path/to/output/files
 ```
 
 ## Development
@@ -52,7 +55,7 @@ check on the code, before allowing a commit.
 ### Using pre-commit
 
 ```shell
-pip install
+pip install pre-commit
 pre-commit
 pre-commit install
 ```
