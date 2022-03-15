@@ -110,18 +110,27 @@ class ContactMap(object):
         :return: None
         """
         for atom_1 in self.get_atoms(mmcif):
-            if self.check_atom(atom_1):
-                chain_1 = atom_1["label_asym_id"]
-                if chain_1 not in self.distances.keys():
-                    self.distances[chain_1] = []
-                pos_1 = self.get_position(atom_1)
-                for atom_2 in self.get_atoms(mmcif):
-                    if self.check_atom(atom_2):
-                        chain_2 = atom_2["label_asym_id"]
-                        if chain_1 == chain_2:
-                            pos_2 = self.get_position(atom_2)
-                            distance = round(pos_1.dist(pos_2), 2)
-                            self.distances[chain_1].append(distance)
+            chain_1, pos_1 = self.get_chain_and_position(atom_1)
+            for atom_2 in self.get_atoms(mmcif):
+                chain_2, pos_2 = self.get_chain_and_position(atom_2)
+                if chain_1 and chain_2 and chain_1 == chain_2:
+                    distance = round(pos_1.dist(pos_2), 2)
+                    self.distances[chain_1].append(distance)
+        print(self.distances)
+
+    def get_chain_and_position(self, atom):
+        """
+        Get the chain identifier and the x, y, z coordinates of an atom
+
+        :return: String, GEMMI Position object
+        """
+        if self.check_atom(atom):
+            chain = atom["label_asym_id"]
+            if chain not in self.distances.keys():
+                self.distances[chain] = []
+            position = self.get_position(atom)
+            return chain, position
+        return None, None
 
     def run(self):
         """
