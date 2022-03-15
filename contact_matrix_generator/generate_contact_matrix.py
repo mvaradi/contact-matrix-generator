@@ -1,6 +1,3 @@
-# TODO Add README
-# TODO Add LICENSE
-
 import argparse
 import logging
 import math
