@@ -1,4 +1,3 @@
-# TODO Add unit tests
 # TODO Add README
 # TODO Add LICENSE
 

@@ -1,3 +1,5 @@
 numpy
 gemmi
 pytest
+codecov
+pytest-cov
