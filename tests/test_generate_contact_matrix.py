@@ -81,6 +81,17 @@ class TestContactMap(TestCase):
         self.assertEqual(rows[0][4], row[4])
         self.assertEqual(rows[0][5], row[5])
 
+    def test_run(self):
+        test_file = str(Path("tests", "test.cif"))
+        cm = ContactMap(test_file, "/output/path")
+        cm.save_matrices = lambda: None
+        self.assertTrue(cm.run())
+
+        test_file = str(Path("tests", "invalid"))
+        cm = ContactMap(test_file, "/output/path")
+        cm.save_matrices = lambda: None
+        self.assertFalse(cm.run())
+
     def test_get_distances(self):
         test_file = str(Path("tests", "test.cif"))
         cm = ContactMap(test_file, "/output/path")

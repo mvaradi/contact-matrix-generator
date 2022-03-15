@@ -1,6 +1,5 @@
 import logging
 import math
-import sys
 from pathlib import Path
 
 import numpy as np
@@ -145,6 +144,7 @@ class ContactMap(object):
             mmcif = cif.read_file(self.input_path).sole_block()
             self.get_distances(mmcif)
             self.save_matrices()
+            return True
         except Exception as e:
             logging.error("Error: %s" % e)
-            sys.exit(1)
+            return
