@@ -1,4 +1,6 @@
 # TODO Add unit tests
+# TODO Add README
+# TODO Add LICENSE
 
 import argparse
 import logging
@@ -123,7 +125,8 @@ class ContactMap(object):
                         chain_2 = atom_2["label_asym_id"]
                         if chain_1 == chain_2:
                             pos_2 = self.get_position(atom_2)
-                            self.distances[chain_1].append(pos_1.dist(pos_2))
+                            distance = round(pos_1.dist(pos_2), 2)
+                            self.distances[chain_1].append(distance)
 
     def run(self):
         """

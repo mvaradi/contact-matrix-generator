@@ -128,5 +128,6 @@ dmypy.json
 
 data/
 ./data
+*.npy
 
 TODO
