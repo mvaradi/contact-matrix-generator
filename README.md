@@ -38,13 +38,13 @@ The package relies on the following:
 The tool can be used as a CLI:
 
 ```shell
-python .\main.py -i ./input.cif -o /path/to/output/files
+python ./main.py -i ./input.cif -o /path/to/output/files
 ```
 
 OR
 
 ```shell
-python .\main.py --input_path=./input.cif --output_path=/path/to/output/files
+python ./main.py --input_path=./input.cif --output_path=/path/to/output/files
 ```
 
 ## Development
