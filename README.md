@@ -1,5 +1,7 @@
 # Contact Matrix Generator
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/d5fa8dbe499a15d7ca20/maintainability)](https://codeclimate.com/github/mvaradi/contact-matrix-generator/maintainability)
+
 This Python 3.9 package can generate C-alpha contact matrices by parsing an
 input mmCIF file, and writing out matrices per PDB chains in .npy format.
 
