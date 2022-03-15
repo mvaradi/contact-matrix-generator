@@ -55,7 +55,7 @@ check on the code, before allowing a commit.
 ### Using pre-commit
 
 ```shell
-pip install
+pip install pre-commit
 pre-commit
 pre-commit install
 ```
